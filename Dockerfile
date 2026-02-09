@@ -30,6 +30,7 @@ RUN a2enmod ssl \
 #    ln -sf /dev/stderr /data/apache2/log/error.log
 
 COPY apache2/cgi-bin/ /data/apache2/cgi-bin/
+RUN chmod +x /data/apache2/cgi-bin/*.cgi
 COPY apache2/data/ /data/apache2/data/
 COPY apache2/htdocs/ /data/apache2/htdocs/
 COPY apache2/icons/ /data/apache2/htdocs/icons/
