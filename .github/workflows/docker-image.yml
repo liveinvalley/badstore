@@ -33,6 +33,7 @@ jobs:
         run: docker run -d --rm -i -p 8080:80 -t badstore-latest
 
       - name: ZAP Full Scan
+        uses: zaproxy/action-full-scan@vv0.2.0
         with:
           docker_name: 'owasp/zap2docker-stable'
           target: 'http://localhost:8080/'
