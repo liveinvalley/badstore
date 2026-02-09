@@ -23,11 +23,7 @@ jobs:
         uses: docker/setup-buildx-action@v2
 
       - name: Build Docker image
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          push: false
-          tags: badstore-latest
+        run: docker build -t badstore-latest .
 
       - name: Run badstore
         run: docker run -d --rm -i -p 8080:80 -t badstore-latest
